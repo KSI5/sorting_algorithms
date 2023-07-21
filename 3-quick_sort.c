@@ -1,38 +1,6 @@
 #include "sort.h"
 
 /**
- * quick_sort - Sorts an array of integers using the Quick sort algorithm.
- * @array: The array of integers to be sorted.
- * @size: The number of elements in the array.
- */
-void quick_sort(int *array, size_t size)
-{
-	if (!array || size < 2)
-		return;
-
-	quick_sort_recursive(array, 0, size - 1, size);
-}
-
-/**
- * quick_sort_recursive - Recursive helper function for Quick sort.
- * @array: The array of integers to be sorted.
- * @low: The starting index of the partition to be sorted.
- * @high: The ending index of the partition to be sorted.
- * @size: The number of elements in the array.
- */
-void quick_sort_recursive(int *array, int low, int high, size_t size)
-{
-	if (low < high)
-	{
-		size_t partition_index = lomuto_partition(array, low, high, size);
-
-		if (partition_index > 0)
-			quick_sort_recursive(array, low, partition_index - 1, size);
-		quick_sort_recursive(array, partition_index + 1, high, size);
-	}
-}
-
-/**
  * lomuto_partition - Lomuto partition scheme for Quick sort.
  * @array: The array of integers to be sorted.
  * @low: The starting index of the partition to be sorted.
@@ -71,4 +39,36 @@ size_t lomuto_partition(int *array, int low, int high, size_t size)
 	}
 
 	return (i + 1);
+}
+
+/**
+ * quick_sort_recursive - Recursive helper function for Quick sort.
+ * @array: The array of integers to be sorted.
+ * @low: The starting index of the partition to be sorted.
+ * @high: The ending index of the partition to be sorted.
+ * @size: The number of elements in the array.
+ */
+void quick_sort_recursive(int *array, int low, int high, size_t size)
+{
+	if (low < high)
+	{
+		size_t partition_index = lomuto_partition(array, low, high, size);
+
+		if (partition_index > 0)
+			quick_sort_recursive(array, low, partition_index - 1, size);
+		quick_sort_recursive(array, partition_index + 1, high, size);
+	}
+}
+
+/**
+ * quick_sort - Sorts an array of integers using the Quick sort algorithm.
+ * @array: The array of integers to be sorted.
+ * @size: The number of elements in the array.
+ */
+void quick_sort(int *array, size_t size)
+{
+	if (!array || size < 2)
+		return;
+
+	quick_sort_recursive(array, 0, size - 1, size);
 }
