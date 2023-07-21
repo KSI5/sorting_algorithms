@@ -1,3 +1,3 @@
-O(n)      // Best case: The array is already sorted, so there are no swaps.
-O(n^2)    // Average case: The array is partially sorted, requiring some swaps.
-O(n^2)    // Worst case: The array is reverse sorted, requiring the most swaps.
+O(n)
+O(n^2)
+O(n^2)
