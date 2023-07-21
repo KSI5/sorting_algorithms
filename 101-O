@@ -1,3 +1,3 @@
-Best case: O(n) (when the list is already sorted)
-Average case: O(n^2) (when the list is randomly ordered)
-Worst case: O(n^2) (when the list is sorted in reverse order)
+O(n)
+O(n^2)
+O(n^2)
