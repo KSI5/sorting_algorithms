@@ -1,8 +1,5 @@
 #include "sort.h"
 
-size_t lomuto_partition(int *array, int low, int high, size_t size);
-void quick_sort_recursive(int *array, int low, int high, size_t size);
-
 /**
  * quick_sort - Sorts an array of integers using the Quick sort algorithm.
  * @array: The array of integers to be sorted.
